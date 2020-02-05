@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+    #one{
+        font-size: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div id="one"></div>
+
+    <button id="btn1">button</button>
+</body>
+
+<script src="slider.js"></script>
+
+
+<script>
+ const flip = new Flip({
+  node: document.querySelector("#one"),
+  from: 6554000,
+  separator: ","
+});
+
+
+var btn1 = document.getElementById("btn1");
+
+btn1.addEventListener('click', function(){
+    flip.flipTo({
+        to: 115445
+});
+})
+
+
+
+    
+
+</script>
+
+</html>
