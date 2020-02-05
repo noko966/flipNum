@@ -50,11 +50,6 @@ class Flip {
     this.node.style.position = "relative";
     this.node.style.overflow = "hidden";
     for (let i = 0; i < digits; i += 1) {
-      //   const ctnr = g(`ctnr ctnr${i}`)(
-      //     ...this.systemArr.map(i => g("digit")(i)),
-      //     g("digit")(this.systemArr[0])
-      //   );
-
       let ctnr = document.createElement("div");
       ctnr.className = "ctnr ctnr" + i;
 
@@ -64,6 +59,11 @@ class Flip {
         temp2.innerHTML = j;
         ctnr.appendChild(temp2);
       }
+
+      let temp3 = document.createElement("div");
+      temp3.className = "digit";
+      temp3.innerHTML = this.systemArr[0];
+      ctnr.appendChild(temp3);
 
       ctnr.style.position = "relative";
       ctnr.style.display = "inline-block";

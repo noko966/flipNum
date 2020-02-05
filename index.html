@@ -1,51 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css" />
 
-    <style>
+    <style></style>
+  </head>
+  <body>
 
-        *{
-            box-sizing: border-box;
-        }
-    #one{
-        font-size: 20px;
-    }
-    </style>
-</head>
-<body>
-    <div id="one"></div>
+    <div class="asd">
+        <div id="one"></div>
+        <button id="btn1">button</button>
+    </div>
 
-    <button id="btn1">button</button>
-</body>
-
-<script src="slider.js"></script>
-
-
-<script>
- const flip = new Flip({
-  node: document.querySelector("#one"),
-  from: 6554000,
-  separator: ","
-});
-
-
-var btn1 = document.getElementById("btn1");
-
-btn1.addEventListener('click', function(){
-    flip.flipTo({
-        to: 115445
-});
-})
-
+    <div class="asd">
+        <div id="two"></div>
+        <button id="btn2">button</button>
+    </div>
+    
+    
 
 
     
+    
 
-</script>
+  </body>
 
+  <script src="slider.js"></script>
+
+  <script>
+
+    let count1 = 1500000;
+    let count1End = 1426082;
+
+    let count2 = 1000000;
+    let count2End = 999718;
+
+
+     const slide1 = new Flip({
+      node: document.querySelector("#one"),
+      from: count1,
+      duration: 5,
+      separator: ".",
+    });
+
+    const slide2 = new Flip({
+      node: document.querySelector("#two"),
+      from: count2,
+      duration: 5,
+      separator: ".",
+    });
+
+
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+
+
+    btn1.addEventListener('click', function(){
+        slide1.flipTo({
+            to: count1End,
+            direct: false
+        });
+    })
+
+    btn2.addEventListener('click', function(){
+        slide2.flipTo({
+            to: count2End,
+            direct: false
+        });
+    })
+
+
+
+
+    // setInterval(() => {
+    //   flip.flipTo({
+    //     to: --count,
+    //     direct: true
+    //   });
+    // }, 1000/60);
+  </script>
 </html>
