@@ -9,7 +9,7 @@ const num2PadNumArr = (num, len) => {
 
 const isstr = any => Object.prototype.toString.call(any) === "[object String]";
 
-class Flip {
+class FlipJackpotNumbers {
   constructor({
     node,
     from = 0,
@@ -46,16 +46,18 @@ class Flip {
   }
 
   _initHTML(digits) {
-    this.node.classList.add("number-flip");
+    this.node.classList.add("component_jackpot_slider");
     this.node.style.position = "relative";
     this.node.style.overflow = "hidden";
     for (let i = 0; i < digits; i += 1) {
       let ctnr = document.createElement("div");
-      ctnr.className = "ctnr ctnr" + i;
+      ctnr.className =
+        "component_jackpot_slider_number_wrapper component_jackpot_slider_number_wrapper" +
+        i;
 
       for (let j = 0; j < this.systemArr.length; j++) {
         let temp2 = document.createElement("div");
-        temp2.className = "digit";
+        temp2.className = "component_jackpot_slider_number";
         temp2.innerHTML = j;
         ctnr.appendChild(temp2);
       }
